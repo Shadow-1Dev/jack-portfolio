@@ -57,3 +57,33 @@ for (let i = 0, len = revealDelayElements.length; i < len; i++) {
 
 window.addEventListener('scroll', reveal);
 window.addEventListener('load', reveal);
+
+/**
+ *  ────── Contact form handler
+ *  Opens the user's email app with a prefilled message for this static site.
+ */
+const contactForm = document.querySelector('[data-contact-form]');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const name = formData.get('name')?.toString().trim() || '';
+    const email = formData.get('email_address')?.toString().trim() || '';
+    const message = formData.get('message')?.toString().trim() || '';
+
+    const subject = encodeURIComponent(`New project inquiry from ${name}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        '',
+        'Project brief:',
+        message,
+      ].join('\n')
+    );
+
+    window.location.href = `mailto:me5067394@gmail.com?cc=essam.designs101@gmail.com&subject=${subject}&body=${body}`;
+  });
+}

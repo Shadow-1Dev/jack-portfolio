@@ -391,8 +391,8 @@ body.nav-active {
 }
 
 .hero-banner .w-100 {
-  mask-image: url('../images/Blob.svg');
-  -webkit-mask-image: url('../images/Blog.svg');
+  mask-image: url('../images/blob.svg');
+  -webkit-mask-image: url('../images/blob.svg');
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
@@ -534,6 +534,64 @@ body.nav-active {
   gap: 10px;
 }
 
+/** ───────────────────────────────────── Resume & Credentials /*/
+.resume {
+  background-color: var(--cultured);
+}
+
+.resume-list {
+  gap: 24px;
+}
+
+.resume-card,
+.credential-card {
+  height: 100%;
+  background-color: var(--white);
+  padding: 28px;
+  border-radius: var(--radius-8);
+  box-shadow: var(--shadow-1);
+}
+
+.resume-card .card-tag {
+  color: var(--cinnamon-satin);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  margin-block-end: 10px;
+}
+
+.resume-card .card-title,
+.credential-card .card-title {
+  margin-block-end: 10px;
+}
+
+.card-meta {
+  color: var(--manatee);
+  font-size: var(--fs-8);
+  margin-block-end: 14px;
+}
+
+.credentials-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block-start: 30px;
+}
+
+.skill-chip {
+  background-color: var(--snow);
+  color: var(--charcoal);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-700);
+}
+
 /** ───────────────────────────────────── Contact Section /*/
 .contact {
   padding-block-end: 0;
@@ -562,6 +620,12 @@ body.nav-active {
 }
 
 .input-field::placeholder {
+  color: var(--manatee);
+}
+
+.form-note {
+  margin-block-start: 14px;
+  font-size: var(--fs-8);
   color: var(--manatee);
 }
 
@@ -623,6 +687,11 @@ textarea.input-field {
 
   /* === About === */
   .about .grid-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resume-list,
+  .credentials-grid {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -754,6 +823,14 @@ textarea.input-field {
 
   .about .grid-list {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .resume-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .credentials-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* === Projects === */
